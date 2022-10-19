@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from database import ref
-from helpers import generate_id
+from .database import ref
+from .helpers import generate_id
 
 
 
