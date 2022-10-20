@@ -10,15 +10,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # load env variables
-google_credentials = os.getenv("GOOGLE_CREDENTIALS")
-databaseURL = os.getenv("DATABASE_URL")
+google_credentials = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+databaseURL = os.environ.get("DATABASE_URL")
 
-with open("google_credentials.json", "w") as file:
-    json.dump(google_credentials, file)
 
 
 # fetch google certificate
-cred = credentials.Certificate('google_credentials.json')
+cred = credentials.Certificate(google_credentials)
 
 
 # Initialize Firebase
