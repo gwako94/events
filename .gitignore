@@ -2,3 +2,7 @@ env
 .env
 Dockerfile
 .gitignore
+.idea/
+
+
+

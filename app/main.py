@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from starlette.middleware.cors import CORSMiddleware
 
 from .database import ref
 from .helpers import generate_id
-
 
 
 class User(BaseModel):
@@ -33,6 +33,20 @@ class User(BaseModel):
 
 
 route = FastAPI()
+
+origins = [
+    "https://neinnovationweek.co.ke/",
+    "http://localhost",
+    "http://localhost:3000",
+]
+
+route.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @route.post("/register")

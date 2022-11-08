@@ -7,5 +7,6 @@ def generate_id():
 
     random_id = random.sample(numbers, 4) + random.sample(letters, 2)
     random.shuffle(random_id)
+    
     generated_id = "".join(random_id)
     return generated_id

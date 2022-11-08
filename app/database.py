@@ -6,12 +6,14 @@ from firebase_admin import db
 from dotenv import load_dotenv
 
 # load environment variables
-
 load_dotenv()
 
+# load env variables
 google_credentials = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 databaseURL = os.getenv("DATABASE_URL")
 
+
+# fetch google certificate
 cred = credentials.Certificate(google_credentials)
 
 
